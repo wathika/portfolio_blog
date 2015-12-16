@@ -1,0 +1,210 @@
+@import "mixins"
+
+a
+  color: #0e8292
+  text-decoration: none
+  +transition(color 400ms)
+  &:hover
+    color: #0fa1b5
+  &.button
+    display: inline-block
+    border: 1px solid #0d7d8e
+    padding: 7px 10px 6px
+    margin-bottom: 10px
+    +transition((color 400ms, border-color 400ms))
+    &:hover
+      border-color: #0fa1b5
+
+p, pre, ul, ol
+  margin-bottom: 20px
+
+h1, h2, h3, h4
+  font-weight: 300
+  color: #0e8292
+  text-transform: uppercase
+  font-size: 24px
+  margin-bottom: 15px
+
+h2
+  font-size: 18px
+  padding-top: 20px
+h1 + h2
+  padding-top: 0
+h3
+  font-size: 16px
+h4
+  font-size: 14px
+
+body
+  font-family: 'Merriweather Sans', Helvetica, sans-serif
+  font-size: 14px
+  line-height: 170%
+  -webkit-font-smoothing: antialiased
+  color: #2a3e47
+  //background: #f6f6f7 image-url("bg_mountains.jpg") 0 0 no-repeat
+  border: 10px solid #f6f6f7
+  border-bottom: 0
+  +transition(background-position 400ms)
+  +max-width
+    background-position: -300px 0
+  +mobile
+    background-position: -500px 0
+
+#content
+  overflow: hidden
+  padding: 50px 100px 30px 0%
+  min-height: 800px
+  +box-sizing
+  > header
+    overflow: hidden
+    margin-bottom: 50px
+    h1
+      float: right
+      width: 183px
+      a
+        overflow: hidden
+        display: block
+        height: 128px
+        text-indent: -3000px
+        +retina_bg(melogo, 128px)
+  + footer
+    overflow: hidden
+    clear: both
+    width: 100%
+    padding: 20px 100px 0 0
+    background: #ececec
+    border-top: 1px solid #cecece
+    +box-sizing
+    .column
+      float: right
+      text-align: right
+    ul
+      float: right
+      margin-bottom: 20px
+      li
+        float: left
+        margin-left: 15px
+        font-weight: 300
+    p
+      clear: both
+      font-size: 12px
+      color: #878787
+      margin-bottom: 40px
+  > nav
+    float: left
+    width: 20%
+    text-align: right
+    +box-sizing
+    a
+      font-weight: 300
+      font-size: 18px
+      color: #b2d6d6
+      +transition(color 400ms)
+      &:hover, &.active
+        color: #fafafa
+    li
+      margin-bottom: 20px
+  > section
+    float: left
+    width: 80%
+    padding-left: 60px
+    +box-sizing
+    > h1
+      margin-bottom: 30px
+    ul
+      display: block
+      list-style: square
+      padding-left: 30px
+  +min-width(1300)
+    > nav a
+      color: #0e8292
+      &:hover, &.active
+        color: #1aacc0
+  +max-width
+    padding: 50px 100px 30px 0
+  +mobile
+    padding: 50px 30px 30px
+    > header
+      h1
+        float: none
+        margin: 0 auto
+    + footer
+      padding: 20px 30px 0
+      ul
+        float: none
+        width: 100%
+        li
+          text-align: center
+          font-size: 16px
+          margin: 0 0 20px
+          width: 20%
+      p
+        text-align: center
+        font-size: 11px
+    > nav
+      overflow: hidden
+      float: none
+      width: 100%
+      padding-bottom: 30px
+      border-bottom: 1px solid #0e8292
+      margin-bottom: 30px
+      text-align: center
+      li
+        float: left
+        width: 33.3%
+        margin: 0
+        text-align: center
+        a
+          text-align: center
+          color: #0e8292
+          font-size: 18px
+          &:hover, &.active
+            color: #1aacc0
+    > section
+      clear: both
+      float: none
+      width: 100%
+      padding: 0
+      > h1
+        text-align: center
+
+pre.highlight
+  line-height: 1.5em
+  overflow-x: auto
+  table
+    .gutter
+      vertical-align: top
+    td
+      padding: 10px
+
+#post
+  > header
+    margin-bottom: 30px
+    h1
+      line-height: 150%
+      margin-bottom: 3px
+    p
+      font-size: 13px
+      color: #455d68
+      margin: 0
+      strong
+        color: #2a3e47
+
+#articles
+  article
+    margin-bottom: 40px
+    header
+      margin-bottom: 15px
+      h1
+        font-size: 18px
+        line-height: 150%
+        margin-bottom: 3px
+      p
+        font-size: 12px
+        color: #455d68
+        margin: 0
+        strong
+          color: #2a3e47
+  +mobile
+    article header h1
+      font-size: 20px
